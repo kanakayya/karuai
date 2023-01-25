@@ -7,7 +7,7 @@ const chatContainer = document.querySelector('#chat_container')
 let loadInterval
 
 function loader(element) {
-    element.textContent = ''
+    element.textContent = ' ',
 
     loadInterval = setInterval(() => {
         // Update the text content of the loading indicator
@@ -25,13 +25,13 @@ function typeText(element, text) {
 
     let interval = setInterval(() => {
         if (index < text.length) {
-            element.innerHTML += text.charAt(index)
+            element.innerHTML += text.charAt(index);
             index++
         } else {
-            clearInterval(interval)
+            clearInterval(interval);
         }
-    }, 20)
-}
+    }, 20);
+};
 
 // generate unique ID for each message div of bot
 // necessary for typing text effect for that specific reply
@@ -97,7 +97,7 @@ const handleSubmit = async (e) => {
     })
 
     clearInterval(loadInterval)
-    messageDiv.innerHTML = " "
+    messageDiv.innerHTML = "..."
 
     if (response.ok) {
         const data = await response.json();
@@ -116,5 +116,5 @@ form.addEventListener('submit', handleSubmit)
 form.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         handleSubmit(e)
-    }
-})
+    }   
+})   
