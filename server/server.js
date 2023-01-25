@@ -40,7 +40,7 @@ app.post('/', async (req, res) => {
     });
 
   } catch (error) {
-    console.log(error.response.data)
+    console.log(error)
     console.error(error)
     res.status(500).send(error || 'Something went wrong');
   }
